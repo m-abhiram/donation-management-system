@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="loginStyle.css">
+  <title>Login Page</title>
+</head>
+<body>
+  <div class="loginDiv">
+    <h1 id="no-margin">Login</h1>
+    <span class="label username">Email ID : </span>
+    <input type="text" class="inputs username" id="usernameInp" placeholder="Enter Email" >
+    <br>
+    <span class="label">Password : </span>
+    <input type="password" class="inputs" id="passwordInp" placeholder="Enter Password" >
+    <br>
+    <div class="align">
+    <div class="Remember-register">
+      <input type="checkbox">Remember me 
+      <!-- <span>Don't have an acoount?</span> -->
+      <a href="SignUp.html">SignUp</a>
+    </div>
+  </div>
+    <br>
+    <button type="submit" id="submitBtn">Submit</button>
+  </div>
+  <script type="module" src="login.js ">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+    import { getAuth } from 'firebase/auth' 
+    import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+    
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCQqF1yv1Bvodhv2oacOswdtu7aXsV4MJY",
+      authDomain: "donation-management-syst-87f76.firebaseapp.com",
+      projectId: "donation-management-syst-87f76",
+      storageBucket: "donation-management-syst-87f76.appspot.com",
+      messagingSenderId: "724531353078",
+      appId: "1:724531353078:web:53270112df37609f1623d7",
+      measurementId: "G-QK39GGVPZM"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    export const auth = getAuth(app)
+  </script>
+</body>
+</html>
