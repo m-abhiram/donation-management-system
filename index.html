@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Management System</title>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h1>Donation Management System</h1>
+        <div id="profile"></div>
+      </div>  
+    </header>
+    
+    <div class="total">
+      <div class="content" id="item-holder">
+        <div class="item">
+          <div class="img">
+            <img src="images/table.jpg">
+          </div>
+          <div class="info">
+            <p>Item : Table</p> 
+            <p>Time Used : 1.5 years</p>
+            <p>Item Condition : Best</p>
+            <p>Location : Old Bowenpally,Hyderabad</p>
+            <div class="know-more">
+              <button class="btn_more">Know More</button>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="item">
+          <div class="img">
+            <img src="images/chair.jpg">
+          </div>
+          <div class="info">
+            <p>Item : Chair</p>
+            <p>Time Used : 2.5 years</p>
+            <p>Item Condition : Good</p>
+            <p>Location : Kukatpally,Hyderabad</p>
+            <div class="know-more">
+              <button class="btn_more">Know More</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="img">
+            <img src="images/shoeStand.jpg">
+          </div>
+          <div class="info">
+            <p>Item : Shoe stand</p>
+            <p>Time Used : 2 years</p>
+            <p>Item Condition : Good</p>
+            <p>Location : Kompally,Hyderabad</p>
+            <div class="know-more"> 
+              <button class="btn_more">Know More</button>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="item">
+          <div class="img">
+            <img src="images/bookShelf.jpg">
+          </div>
+          <div class="info">
+            <p>Item : Book Shelf</p>
+            <p>Time Used : 3 years</p>
+            <p>Item Condition : Good</p>
+            <p>Location : KPHB Colony,Hyderabad</p>
+            <div class="know-more">
+              <button class="btn_more">Know More</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="addItem">
+        <p>*You must be logged in to add an item to the donation list*</p>
+        <br><button id="newItem">Add Item</button>
+        <br>
+        <p></p>
+      </div>
+    </div>
+
+    <template id="item-template">
+      <div class="item">
+        <div class="img"></div>
+        <div class="info">
+          <p>Item : </p>
+          <p>Time Used : </p>
+          <p>Item Condition : </p>
+          <p>Location : </p>
+          <div class="know-more">
+            <button class="btn_more">Know More</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <div class="add" id="new">
+      <div class="itemInp">
+        <button id="close-upload">X</button>
+        <br>
+        <label class="itemInput">Enter the name of the item : </label>
+        <input type="text" class="itemInfoInput" id="name">
+        <br>
+        <br>
+        <label class="itemInput">Enter the time for which the item was used(in years) : </label>
+        <input type="number" class="itemInfoInput itemInput">
+        <br>
+        <br>
+        <label class="itemInput">Enter the condition of the item (Best, Good, Average): </label>
+        <input type="text" class="itemInfoInput itemInput">
+        <br>
+        <br>
+        <label class="itemInput">Enter the location from which the item must be collected : </label>
+        <input type="text" class="itemInfoInput itemInput">
+        <br>
+        <br>
+        <label class="itemInput">Upload images of the item : </label>
+        <br>
+        <br>
+        <input type="file" class="itemInfoInput itemInput" id="imgInput" accept="image/png, image/jpeg">
+        <br><br>
+        <button id="upload-item" onclick="uploadImage">Upload</button>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.umd.js"></script>
+    <!-- <script src="node_modules/firebase/dist/firebase.js"></script> -->
+
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
