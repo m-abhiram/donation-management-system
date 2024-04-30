@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Management System</title>
-    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js" type="module"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js" type="module"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js" type="module"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -95,12 +92,14 @@
 
     <template id="item-template">
       <div class="item">
-        <div class="img"></div>
+        <div class="img" id="itemImage">
+          <!-- <img id="itemImg" src="" alt="item-image"> -->
+        </div>
         <div class="info">
-          <p>Item : </p>
-          <p>Time Used : </p>
-          <p>Item Condition : </p>
-          <p>Location : </p>
+          <p id="itemNameTemplate">Item : </p>
+          <p id="timeUsedTemplate">Time Used : </p>
+          <p id="itemConditionTemplate">Item Condition : </p>
+          <p id="itemLocationTemplate">Location : </p>
           <div class="know-more">
             <button class="btn_more">Know More</button>
           </div>
@@ -117,23 +116,23 @@
         <br>
         <br>
         <label class="itemInput">Enter the time for which the item was used(in years) : </label>
-        <input type="number" class="itemInfoInput itemInput">
+        <input type="number" class="itemInfoInput itemInput" id="timeUsed">
         <br>
         <br>
         <label class="itemInput">Enter the condition of the item (Best, Good, Average): </label>
-        <input type="text" class="itemInfoInput itemInput">
+        <input type="text" class="itemInfoInput itemInput" id="itemCondition">
         <br>
         <br>
         <label class="itemInput">Enter the location from which the item must be collected : </label>
-        <input type="text" class="itemInfoInput itemInput">
+        <input type="text" class="itemInfoInput itemInput" id="item-location">
         <br>
         <br>
         <label class="itemInput">Upload images of the item : </label>
         <br>
         <br>
-        <input type="file" class="itemInfoInput itemInput" id="imgInput" accept="image/png, image/jpeg">
+        <input type="file" class="itemInfoInput itemInput" id="imgInput" accept="image/png, image/jpeg, image/PNG">
         <br><br>
-        <button id="upload-item" onclick="uploadImage">Upload</button>
+        <button id="upload-item">Upload</button>
       </div>
     </div>
 
