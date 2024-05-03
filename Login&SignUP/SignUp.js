@@ -38,6 +38,8 @@ signUpButton.addEventListener("click",()=>{
     let password = document.getElementById("SignUpPasswordInp").value;
     let username = document.getElementById("UsernameInp").value;
 
+    localStorage.setItem("email",email)
+    localStorage.setItem("password",password)
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
     const user = userCredential.user;
@@ -47,7 +49,7 @@ signUpButton.addEventListener("click",()=>{
       Email : email
     })
 
-    alert("User registered");
+    alert("Registration completed successfully");
     })
     .catch((error) => {
     const errorCode = error.code;
@@ -56,3 +58,5 @@ signUpButton.addEventListener("click",()=>{
     });
   }
 });
+
+exports.username=username
