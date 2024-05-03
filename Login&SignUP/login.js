@@ -24,6 +24,10 @@ submitBtn.addEventListener("click", ()=>{
   let email = document.getElementById("usernameInp").value
   let password = document.getElementById("passwordInp").value
 
+  let emailData=localStorage.getItem("email")
+  let passwordData=localStorage.getItem("password")
+
+  
   const auth = getAuth();
   signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
     const user = userCredential.user;
@@ -39,7 +43,7 @@ submitBtn.addEventListener("click", ()=>{
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert(errorMessage);
+    alert("Your email or password is wrong!!")
   });
 
 });
