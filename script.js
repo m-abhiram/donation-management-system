@@ -30,8 +30,7 @@ const user = auth.currentUser;
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
-    container.innerHTML='<button id="logoutBtn"><a id="no-style">Logout</a></button>'
-    
+    // container.innerHTML='<button id="logoutBtn"><a id="no-style">Logout</a></button>'
     const uid = user.uid;
     // ...
   } else {
@@ -39,23 +38,6 @@ onAuthStateChanged(auth, (user) => {
     container.innerHTML='<button id="loginBtn"><a id="no-style" href="Login&SignUP/login.html">Login</a></button>'
   }
 });
-
-
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   var logoutBtn = document.getElementById('logoutBtn');
-
-//   logoutBtn.addEventListener('click', function () {
-//       firebase.auth().signOut().then(function () {
-//           // Sign-out successful.
-//           console.log("User signed out successfully.");
-//       }).catch(function (error) {
-//           // An error happened.
-//           console.error("Error signing out:", error);
-//       });
-//   });
-// });
 
 
 document.getElementById("itemsNav").addEventListener("click",()=>{
@@ -116,7 +98,6 @@ document.getElementById("historyNav").addEventListener("click",()=>{
   let dataBaseOfItems = JSON.parse(localStorage.getItem("dataBaseOfItems"));
 
   for(let i in dataBaseOfItems){
-    console.log(dataBaseOfItems[i].item)
     const history = document.getElementById("historyPage")
     const templateHistory = document.getElementById("templateHistory");
     const contentHistory= templateHistory.content.cloneNode(true);
@@ -160,6 +141,7 @@ inputTag.addEventListener("change",function(){
     localStorage.setItem("recent-image",reader.result);
   });
 })
+
 
 
 let uploadBtn = document.getElementById("upload-item");
