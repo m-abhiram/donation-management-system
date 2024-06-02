@@ -1,6 +1,7 @@
 body{
-  background: rgb(76,221,132);
-  background: linear-gradient(90deg, rgba(76,221,132,1) 16%, rgba(0,206,231,1) 30%, rgba(0,255,226,1) 63%);
+  background: rgb(238, 234, 210);
+  /* background: linear-gradient(90deg, rgba(76,221,132,1) 16%, rgba(0,206,231,1) 30%, rgba(0,255,226,1) 63%); */
+
 }
 
 .loginDiv{
@@ -8,7 +9,7 @@ body{
   height: 60vh;
   margin-left: 70vh;
   margin-top: 10vh;
-  background-color: rgba(255, 255, 255, 0.671);
+  background-color: rgba(211, 165, 180, 0.671);
   border-radius: 50px;
   padding: 30px;
 }
