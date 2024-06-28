@@ -23,7 +23,6 @@ let signUpButton = document.getElementById("SignUpBtn")
 let bool = document.getElementById("Accept")
 
 
-
 signUpButton.addEventListener("click",()=>{
   if(document.getElementById("SignUpUsernameInp").value == "" || document.getElementById("SignUpPasswordInp").value == "" || document.getElementById("UsernameInp").value == ""){
     alert("Fill in all the details!")
@@ -37,7 +36,8 @@ signUpButton.addEventListener("click",()=>{
     let email = document.getElementById("SignUpUsernameInp").value;
     let password = document.getElementById("SignUpPasswordInp").value;
     let username = document.getElementById("UsernameInp").value;
-
+    
+    localStorage.setItem("username",username);
     localStorage.setItem("email",email)
     localStorage.setItem("password",password)
     createUserWithEmailAndPassword(auth, email, password)
@@ -48,7 +48,6 @@ signUpButton.addEventListener("click",()=>{
       Username : username,
       Email : email
     })
-
     alert("Registration completed successfully");
     })
     .catch((error) => {
@@ -58,5 +57,5 @@ signUpButton.addEventListener("click",()=>{
     });
   }
 });
-
-exports.username=username
+// let username = document.getElementById("UsernameInp").value;
+// exports.username=username
