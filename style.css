@@ -255,10 +255,29 @@ body{
   bottom: 70px;
 }
 
+.profileInfo{
+  background-color: white;
+  color: black;
+}
+
+
+#logoutAndProfileDiv{
+  display: none;
+}
+
+#logoutBtnProfile{
+  background-color: black;
+  color: white;
+  display:flex;
+  height: fit-content;
+  width: fit-content;
+  font-size: 20px;
+}
 #loginPage{
   text-decoration: none;
   color: white;
 }
+
 
 #loginBtn:active{
   background-color: rgb(11, 69, 83);
