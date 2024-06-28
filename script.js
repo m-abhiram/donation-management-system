@@ -1,7 +1,5 @@
-import  { getAuth ,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+import  { getAuth ,onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 import  {initializeApp}  from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { dataBaseOfItems } from "./db.js";
-
 
 
 let firebaseConfig = {
@@ -30,15 +28,29 @@ const user = auth.currentUser;
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
-    // container.innerHTML='<button id="logoutBtn"><a id="no-style">Logout</a></button>'
     const uid = user.uid;
+    // document.getElementById("logoutAndProfileDiv").style.display="block";
     // ...
-  } else {
+} else {
     // User is signed out
+    // document.getElementById("logoutAndProfileDiv").style.display="hide";
     container.innerHTML='<button id="loginBtn"><a id="no-style" href="Login&SignUP/login.html">Login</a></button>'
   }
 });
 
+
+document.getElementById("logoutBtnProfile").addEventListener("click",()=>{
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        document.getElementById("logoutAndProfileDiv").style.display="hide";
+        window.location.replace("http://127.0.0.1:5500/index.html");
+        alert("Successfully logged out!")
+
+      }).catch((error) => {
+          // An error happened.
+          alert("An error occured when logging you out!")
+      });
+});
 
 document.getElementById("itemsNav").addEventListener("click",()=>{
   // console.log("clicked");
@@ -115,7 +127,6 @@ document.getElementById("newItem").addEventListener("click",()=>{
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
-
       let popUp=document.getElementById("new")
       popUp.style.display="block"
     
@@ -177,11 +188,21 @@ document.getElementById("close-upload").addEventListener("click",()=>{
   document.getElementById("timeUsed").value="";
   document.getElementById("itemCondition").value="";
   document.getElementById("contactGmail").value="";
-})
+});
+
 
 window.onload = updateData()
 
 
+window.onload = ()=>{
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          document.getElementById("logoutAndProfileDiv").style.display="block";
+          document.getElementById("userInfo").innerHTML= "Username : "+ localStorage.getItem("username")+"<br>Email : "+ localStorage.getItem("loginEmailId") + "<br>"; 
+        } 
+    });
+}
 
 
 function updateData(){
@@ -201,4 +222,3 @@ function updateData(){
     document.getElementById("contactTemplate").innerHTML="Contact : "+dataBaseOfItems[i].contact;
   }
 }
-
