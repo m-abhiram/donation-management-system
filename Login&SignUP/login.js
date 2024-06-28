@@ -18,7 +18,6 @@ const database = getDatabase(app);
 
 let submitBtn = document.getElementById("submitBtn")
 
-
 submitBtn.addEventListener("click", ()=>{
   //Code to check if the user has entered the right credentials
   let email = document.getElementById("usernameInp").value
@@ -38,6 +37,8 @@ submitBtn.addEventListener("click", ()=>{
       last_login : date
     })
     //open website
+    let email = document.getElementById("usernameInp").value;
+    localStorage.setItem("loginEmailId",email);
     window.location.replace("http://127.0.0.1:5500/index.html");
   })
   .catch((error) => {
