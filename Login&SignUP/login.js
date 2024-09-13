@@ -39,7 +39,7 @@ submitBtn.addEventListener("click", ()=>{
     //open website
     let email = document.getElementById("usernameInp").value;
     localStorage.setItem("loginEmailId",email);
-    window.location.replace("http://127.0.0.1:5500/index.html");
+    window.location.replace("https://m-abhiram.github.io/donation-management-system/");
   })
   .catch((error) => {
     const errorCode = error.code;
