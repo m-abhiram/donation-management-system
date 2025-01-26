@@ -4,3 +4,6 @@ This project aims to provide a platform that is designed to revolutionize how no
 This system provides dedicated interfaces and tools to facilitate the seamless tracking, communication, and distribution of in-kind. 
 The Donation Management System enhances operational efficiency, ensures transparency, and builds stronger connections between donors and recipients.
 The technologies used in this project are HTML, CSS, Javascript and Firebase, we used firebase for the authentication of a user
+
+
+Visit the website : https://m-abhiram.github.io/donation-management-system/
