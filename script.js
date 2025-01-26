@@ -43,7 +43,7 @@ document.getElementById("logoutBtnProfile").addEventListener("click",()=>{
     signOut(auth).then(() => {
         // Sign-out successful.
         document.getElementById("logoutAndProfileDiv").style.display="hide";
-        window.location.replace("http://127.0.0.1:5500/index.html");
+        window.location.replace("https://m-abhiram.github.io/donation-management-system/");
         alert("Successfully logged out!")
 
       }).catch((error) => {
